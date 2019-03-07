@@ -6,103 +6,122 @@
  * @version $Id: AlipayMobilePublicMultiMediaExecute.php, v 0.1 Aug 15, 2014 10:19:01 AM yuanwai.wang Exp $
  */
 
-//namespace alipay\api ;
+namespace AliPay\Aop;
 
 
+class AlipayMobilePublicMultiMediaExecute
+{
 
-class AlipayMobilePublicMultiMediaExecute{
+    /**
+     * @var int
+     */
+    private $code = 200;
 
-	private $code = 200 ;
-	private $msg = '';
-	private $body = '';
-	private $params = '';
+    /**
+     * @var string
+     */
+    private $msg = '';
+    /**
+     * @var string
+     */
+    private $body = '';
 
-	private $fileSuffix = array(
-		"image/jpeg" 		=> 'jpg', //+
-		"text/plain"		=> 'text'
-	);
+    /**
+     * @var string
+     */
+    private $params = '';
 
-	/*
-	 * @$header : 头部
-	 * */
-	function __construct( $header, $body, $httpCode ){
-		$this -> code = $httpCode;
-		$this -> msg = '';
-		$this -> params = $header ;
-		$this -> body = $body;
-	}
+    /**
+     * @var array
+     */
+    private $fileSuffix = array(
+        "image/jpeg" => 'jpg', //+
+        "text/plain" => 'text'
+    );
 
-	/**
-	 *
-	 * @return text | bin
-	 */
-	public function getCode(){
-		return $this -> code ;
-	}
+    /*
+     * @$header : 头部
+     * */
+    function __construct($header, $body, $httpCode)
+    {
+        $this->code = $httpCode;
+        $this->msg = '';
+        $this->params = $header;
+        $this->body = $body;
+    }
 
-	/**
-	 *
-	 * @return text | bin
-	 */
-	public function getMsg(){
-		return $this -> msg ;
-	}
+    /**
+     * @return int
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
 
-	/**
-	 *
-	 * @return text | bin
-	 */
-	public function getType(){
-		$subject = $this -> params ;
-		$pattern = '/Content\-Type:([^;]+)/';
-		preg_match($pattern, $subject, $matches);
-		if( $matches ){
-			$type = $matches[1];
-		}else{
-			$type = 'application/download';
-		}
+    /**
+     * @return string
+     */
+    public function getMsg()
+    {
+        return $this->msg;
+    }
 
-		return str_replace( ' ', '', $type );
-	}
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        $subject = $this->params;
+        $pattern = '/Content\-Type:([^;]+)/';
+        preg_match($pattern, $subject, $matches);
+        if ($matches) {
+            $type = $matches[1];
+        } else {
+            $type = 'application/download';
+        }
 
-	/**
-	 *
-	 * @return text | bin
-	 */
-	public function getContentLength(){
-		$subject = $this -> params ;
-		$pattern = '/Content-Length:\s*([^\n]+)/';
-		preg_match($pattern, $subject, $matches);
-		return (int)( isset($matches[1] ) ? $matches[1]  : '' );
-	}
+        return str_replace(' ', '', $type);
+    }
 
+    /**
+     * @return int
+     */
+    public function getContentLength()
+    {
+        $subject = $this->params;
+        $pattern = '/Content-Length:\s*([^\n]+)/';
+        preg_match($pattern, $subject, $matches);
+        return (int)(isset($matches[1]) ? $matches[1] : '');
+    }
 
-	public function getFileSuffix( $fileType ){
-		$type = isset( $this -> fileSuffix[ $fileType ] ) ? $this -> fileSuffix[ $fileType ] : 'text/plain' ;
-		if( !$type ){
-			$type = 'json';
-		}
-		return $type;
-	}
+    /**
+     * @param $fileType
+     * @return mixed|string
+     */
+    public function getFileSuffix($fileType)
+    {
+        $type = isset($this->fileSuffix[$fileType]) ? $this->fileSuffix[$fileType] : 'text/plain';
+        if (!$type) {
+            $type = 'json';
+        }
+        return $type;
+    }
 
+    /**
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->body;
+    }
 
-
-	/**
-	 *
-	 * @return text | bin
-	 */
-	public function getBody(){
-		//header('Content-type: image/jpeg');
-		return $this -> body ;
-	}
-
-	/**
-	 * 获取参数
-	 * @return text | bin
-	 */
-	public function getParams(){
-		return $this -> params ;
-	}
-
+    /**
+     * 获取参数
+     * @return string
+     */
+    public function getParams()
+    {
+        return $this->params;
+    }
 
 }
