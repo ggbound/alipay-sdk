@@ -1,0 +1,13 @@
+{
+    "name": "ggbound/alipay-sdk",
+    "description": "SDK3.3.1",
+    "type": "project",
+    "require": {},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zhuhaibing",
+            "email": "1104061194@qq.com"
+        }
+    ]
+}
