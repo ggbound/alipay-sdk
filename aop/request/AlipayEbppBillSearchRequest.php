@@ -5,211 +5,212 @@
  * @author auto create
  * @since 1.0, 2017-04-07 17:13:40
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayEbppBillSearchRequest
 {
-	/** 
-	 * 账单流水
-	 **/
-	private $billKey;
-	
-	/** 
-	 * 出账机构
-	 **/
-	private $chargeInst;
-	
-	/** 
-	 * 销账机构
-	 **/
-	private $chargeoffInst;
-	
-	/** 
-	 * 销账机构给出账机构分配的id
-	 **/
-	private $companyId;
-	
-	/** 
-	 * 必须以key value形式定义，转为json为格式：{"key1":"value1","key2":"value2","key3":"value3","key4":"value4"}
- 后端会直接转换为MAP对象，转换异常会报参数格式错误
-	 **/
-	private $extend;
-	
-	/** 
-	 * 业务类型
-	 **/
-	private $orderType;
-	
-	/** 
-	 * 子业务类型
-	 **/
-	private $subOrderType;
+    /**
+     * 账单流水
+     **/
+    private $billKey;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 出账机构
+     **/
+    private $chargeInst;
 
-	
-	public function setBillKey($billKey)
-	{
-		$this->billKey = $billKey;
-		$this->apiParas["bill_key"] = $billKey;
-	}
+    /**
+     * 销账机构
+     **/
+    private $chargeoffInst;
 
-	public function getBillKey()
-	{
-		return $this->billKey;
-	}
+    /**
+     * 销账机构给出账机构分配的id
+     **/
+    private $companyId;
 
-	public function setChargeInst($chargeInst)
-	{
-		$this->chargeInst = $chargeInst;
-		$this->apiParas["charge_inst"] = $chargeInst;
-	}
+    /**
+     * 必须以key value形式定义，转为json为格式：{"key1":"value1","key2":"value2","key3":"value3","key4":"value4"}
+     * 后端会直接转换为MAP对象，转换异常会报参数格式错误
+     **/
+    private $extend;
 
-	public function getChargeInst()
-	{
-		return $this->chargeInst;
-	}
+    /**
+     * 业务类型
+     **/
+    private $orderType;
 
-	public function setChargeoffInst($chargeoffInst)
-	{
-		$this->chargeoffInst = $chargeoffInst;
-		$this->apiParas["chargeoff_inst"] = $chargeoffInst;
-	}
+    /**
+     * 子业务类型
+     **/
+    private $subOrderType;
 
-	public function getChargeoffInst()
-	{
-		return $this->chargeoffInst;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function setCompanyId($companyId)
-	{
-		$this->companyId = $companyId;
-		$this->apiParas["company_id"] = $companyId;
-	}
 
-	public function getCompanyId()
-	{
-		return $this->companyId;
-	}
+    public function setBillKey($billKey)
+    {
+        $this->billKey = $billKey;
+        $this->apiParas["bill_key"] = $billKey;
+    }
 
-	public function setExtend($extend)
-	{
-		$this->extend = $extend;
-		$this->apiParas["extend"] = $extend;
-	}
+    public function getBillKey()
+    {
+        return $this->billKey;
+    }
 
-	public function getExtend()
-	{
-		return $this->extend;
-	}
+    public function setChargeInst($chargeInst)
+    {
+        $this->chargeInst = $chargeInst;
+        $this->apiParas["charge_inst"] = $chargeInst;
+    }
 
-	public function setOrderType($orderType)
-	{
-		$this->orderType = $orderType;
-		$this->apiParas["order_type"] = $orderType;
-	}
+    public function getChargeInst()
+    {
+        return $this->chargeInst;
+    }
 
-	public function getOrderType()
-	{
-		return $this->orderType;
-	}
+    public function setChargeoffInst($chargeoffInst)
+    {
+        $this->chargeoffInst = $chargeoffInst;
+        $this->apiParas["chargeoff_inst"] = $chargeoffInst;
+    }
 
-	public function setSubOrderType($subOrderType)
-	{
-		$this->subOrderType = $subOrderType;
-		$this->apiParas["sub_order_type"] = $subOrderType;
-	}
+    public function getChargeoffInst()
+    {
+        return $this->chargeoffInst;
+    }
 
-	public function getSubOrderType()
-	{
-		return $this->subOrderType;
-	}
+    public function setCompanyId($companyId)
+    {
+        $this->companyId = $companyId;
+        $this->apiParas["company_id"] = $companyId;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.ebpp.bill.search";
-	}
+    public function getCompanyId()
+    {
+        return $this->companyId;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function setExtend($extend)
+    {
+        $this->extend = $extend;
+        $this->apiParas["extend"] = $extend;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getExtend()
+    {
+        return $this->extend;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setOrderType($orderType)
+    {
+        $this->orderType = $orderType;
+        $this->apiParas["order_type"] = $orderType;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getOrderType()
+    {
+        return $this->orderType;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setSubOrderType($subOrderType)
+    {
+        $this->subOrderType = $subOrderType;
+        $this->apiParas["sub_order_type"] = $subOrderType;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getSubOrderType()
+    {
+        return $this->subOrderType;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.ebpp.bill.search";
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-  }
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
+
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
+
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

@@ -5,146 +5,147 @@
  * @author auto create
  * @since 1.0, 2018-08-22 11:31:56
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayOfflineMarketingVoucherCodeUploadRequest
 {
-	/** 
-	 * 约定的扩展参数
-	 **/
-	private $extendParams;
-	
-	/** 
-	 * 文件编码
-	 **/
-	private $fileCharset;
-	
-	/** 
-	 * 文件二进制内容
-	 **/
-	private $fileContent;
+    /**
+     * 约定的扩展参数
+     **/
+    private $extendParams;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 文件编码
+     **/
+    private $fileCharset;
 
-	
-	public function setExtendParams($extendParams)
-	{
-		$this->extendParams = $extendParams;
-		$this->apiParas["extend_params"] = $extendParams;
-	}
+    /**
+     * 文件二进制内容
+     **/
+    private $fileContent;
 
-	public function getExtendParams()
-	{
-		return $this->extendParams;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function setFileCharset($fileCharset)
-	{
-		$this->fileCharset = $fileCharset;
-		$this->apiParas["file_charset"] = $fileCharset;
-	}
 
-	public function getFileCharset()
-	{
-		return $this->fileCharset;
-	}
+    public function setExtendParams($extendParams)
+    {
+        $this->extendParams = $extendParams;
+        $this->apiParas["extend_params"] = $extendParams;
+    }
 
-	public function setFileContent($fileContent)
-	{
-		$this->fileContent = $fileContent;
-		$this->apiParas["file_content"] = $fileContent;
-	}
+    public function getExtendParams()
+    {
+        return $this->extendParams;
+    }
 
-	public function getFileContent()
-	{
-		return $this->fileContent;
-	}
+    public function setFileCharset($fileCharset)
+    {
+        $this->fileCharset = $fileCharset;
+        $this->apiParas["file_charset"] = $fileCharset;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.offline.marketing.voucher.code.upload";
-	}
+    public function getFileCharset()
+    {
+        return $this->fileCharset;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function setFileContent($fileContent)
+    {
+        $this->fileContent = $fileContent;
+        $this->apiParas["file_content"] = $fileContent;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getFileContent()
+    {
+        return $this->fileContent;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.offline.marketing.voucher.code.upload";
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-  }
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

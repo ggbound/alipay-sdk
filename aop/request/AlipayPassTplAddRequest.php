@@ -5,131 +5,132 @@
  * @author auto create
  * @since 1.0, 2016-07-01 15:35:14
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayPassTplAddRequest
 {
-	/** 
-	 * 支付宝pass模版内容【JSON格式】
-具体格式可参考https://alipass.alipay.com中文档中心-格式说明
-	 **/
-	private $tplContent;
-	
-	/** 
-	 * 模版外部唯一标识：商户用于控制模版的唯一性。
-	 **/
-	private $uniqueId;
+    /**
+     * 支付宝pass模版内容【JSON格式】
+     * 具体格式可参考https://alipass.alipay.com中文档中心-格式说明
+     **/
+    private $tplContent;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 模版外部唯一标识：商户用于控制模版的唯一性。
+     **/
+    private $uniqueId;
 
-	
-	public function setTplContent($tplContent)
-	{
-		$this->tplContent = $tplContent;
-		$this->apiParas["tpl_content"] = $tplContent;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getTplContent()
-	{
-		return $this->tplContent;
-	}
 
-	public function setUniqueId($uniqueId)
-	{
-		$this->uniqueId = $uniqueId;
-		$this->apiParas["unique_id"] = $uniqueId;
-	}
+    public function setTplContent($tplContent)
+    {
+        $this->tplContent = $tplContent;
+        $this->apiParas["tpl_content"] = $tplContent;
+    }
 
-	public function getUniqueId()
-	{
-		return $this->uniqueId;
-	}
+    public function getTplContent()
+    {
+        return $this->tplContent;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.pass.tpl.add";
-	}
+    public function setUniqueId($uniqueId)
+    {
+        $this->uniqueId = $uniqueId;
+        $this->apiParas["unique_id"] = $uniqueId;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getUniqueId()
+    {
+        return $this->uniqueId;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.pass.tpl.add";
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

@@ -5,130 +5,131 @@
  * @author auto create
  * @since 1.0, 2017-12-20 15:24:53
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipaySecurityProdSignatureFileUploadRequest
 {
-	/** 
-	 * 业务唯一标识，由支付宝统一分配，无法自助获取
-	 **/
-	private $bizProduct;
-	
-	/** 
-	 * 传入上传的文件流
-	 **/
-	private $fileContent;
+    /**
+     * 业务唯一标识，由支付宝统一分配，无法自助获取
+     **/
+    private $bizProduct;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 传入上传的文件流
+     **/
+    private $fileContent;
 
-	
-	public function setBizProduct($bizProduct)
-	{
-		$this->bizProduct = $bizProduct;
-		$this->apiParas["biz_product"] = $bizProduct;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getBizProduct()
-	{
-		return $this->bizProduct;
-	}
 
-	public function setFileContent($fileContent)
-	{
-		$this->fileContent = $fileContent;
-		$this->apiParas["file_content"] = $fileContent;
-	}
+    public function setBizProduct($bizProduct)
+    {
+        $this->bizProduct = $bizProduct;
+        $this->apiParas["biz_product"] = $bizProduct;
+    }
 
-	public function getFileContent()
-	{
-		return $this->fileContent;
-	}
+    public function getBizProduct()
+    {
+        return $this->bizProduct;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.security.prod.signature.file.upload";
-	}
+    public function setFileContent($fileContent)
+    {
+        $this->fileContent = $fileContent;
+        $this->apiParas["file_content"] = $fileContent;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getFileContent()
+    {
+        return $this->fileContent;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.security.prod.signature.file.upload";
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

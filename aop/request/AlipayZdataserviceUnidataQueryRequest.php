@@ -5,130 +5,131 @@
  * @author auto create
  * @since 1.0, 2017-04-26 16:20:03
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayZdataserviceUnidataQueryRequest
 {
-	/** 
-	 * 通用的查询入参
-	 **/
-	private $queryCondition;
-	
-	/** 
-	 * 返回数据的类型，内部业务系统分配
-	 **/
-	private $uniqKey;
+    /**
+     * 通用的查询入参
+     **/
+    private $queryCondition;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 返回数据的类型，内部业务系统分配
+     **/
+    private $uniqKey;
 
-	
-	public function setQueryCondition($queryCondition)
-	{
-		$this->queryCondition = $queryCondition;
-		$this->apiParas["query_condition"] = $queryCondition;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getQueryCondition()
-	{
-		return $this->queryCondition;
-	}
 
-	public function setUniqKey($uniqKey)
-	{
-		$this->uniqKey = $uniqKey;
-		$this->apiParas["uniq_key"] = $uniqKey;
-	}
+    public function setQueryCondition($queryCondition)
+    {
+        $this->queryCondition = $queryCondition;
+        $this->apiParas["query_condition"] = $queryCondition;
+    }
 
-	public function getUniqKey()
-	{
-		return $this->uniqKey;
-	}
+    public function getQueryCondition()
+    {
+        return $this->queryCondition;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.zdataservice.unidata.query";
-	}
+    public function setUniqKey($uniqKey)
+    {
+        $this->uniqKey = $uniqKey;
+        $this->apiParas["uniq_key"] = $uniqKey;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getUniqKey()
+    {
+        return $this->uniqKey;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.zdataservice.unidata.query";
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

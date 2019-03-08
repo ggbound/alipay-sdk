@@ -5,149 +5,150 @@
  * @author auto create
  * @since 1.0, 2017-12-07 20:13:48
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayPassFileAddRequest
 {
-	/** 
-	 * 支付宝pass文件二进制Base64加密字符串
-	 **/
-	private $fileContent;
-	
-	/** 
-	 * 支付宝用户识别信息：
-当 recognition_type=1时， recognition_info={“partner_id”:”2088102114633762”,“out_trade_no”:”1234567”}；
-当recognition_type=2时， recognition_info={“user_id”:”2088102114633761“}
-当recognition_type=3时，recognition_info={“mobile”:”136XXXXXXXX“}
-	 **/
-	private $recognitionInfo;
-	
-	/** 
-	 * Alipass添加对象识别类型【1--订单信息；2--支付宝userId;3--支付宝绑定手机号】
-	 **/
-	private $recognitionType;
+    /**
+     * 支付宝pass文件二进制Base64加密字符串
+     **/
+    private $fileContent;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 支付宝用户识别信息：
+     * 当 recognition_type=1时， recognition_info={“partner_id”:”2088102114633762”,“out_trade_no”:”1234567”}；
+     * 当recognition_type=2时， recognition_info={“user_id”:”2088102114633761“}
+     * 当recognition_type=3时，recognition_info={“mobile”:”136XXXXXXXX“}
+     **/
+    private $recognitionInfo;
 
-	
-	public function setFileContent($fileContent)
-	{
-		$this->fileContent = $fileContent;
-		$this->apiParas["file_content"] = $fileContent;
-	}
+    /**
+     * Alipass添加对象识别类型【1--订单信息；2--支付宝userId;3--支付宝绑定手机号】
+     **/
+    private $recognitionType;
 
-	public function getFileContent()
-	{
-		return $this->fileContent;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function setRecognitionInfo($recognitionInfo)
-	{
-		$this->recognitionInfo = $recognitionInfo;
-		$this->apiParas["recognition_info"] = $recognitionInfo;
-	}
 
-	public function getRecognitionInfo()
-	{
-		return $this->recognitionInfo;
-	}
+    public function setFileContent($fileContent)
+    {
+        $this->fileContent = $fileContent;
+        $this->apiParas["file_content"] = $fileContent;
+    }
 
-	public function setRecognitionType($recognitionType)
-	{
-		$this->recognitionType = $recognitionType;
-		$this->apiParas["recognition_type"] = $recognitionType;
-	}
+    public function getFileContent()
+    {
+        return $this->fileContent;
+    }
 
-	public function getRecognitionType()
-	{
-		return $this->recognitionType;
-	}
+    public function setRecognitionInfo($recognitionInfo)
+    {
+        $this->recognitionInfo = $recognitionInfo;
+        $this->apiParas["recognition_info"] = $recognitionInfo;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.pass.file.add";
-	}
+    public function getRecognitionInfo()
+    {
+        return $this->recognitionInfo;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function setRecognitionType($recognitionType)
+    {
+        $this->recognitionType = $recognitionType;
+        $this->apiParas["recognition_type"] = $recognitionType;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getRecognitionType()
+    {
+        return $this->recognitionType;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.pass.file.add";
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-  }
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

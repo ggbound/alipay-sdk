@@ -5,130 +5,131 @@
  * @author auto create
  * @since 1.0, 2018-02-02 17:40:14
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayTrustUserReportGetRequest
 {
-	/** 
-	 * 指定该接口在商户端的使用场景。具体枚举值在样例代码中给出
-	 **/
-	private $scene;
-	
-	/** 
-	 * FN_S（金融简版）
-	 **/
-	private $type;
+    /**
+     * 指定该接口在商户端的使用场景。具体枚举值在样例代码中给出
+     **/
+    private $scene;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * FN_S（金融简版）
+     **/
+    private $type;
 
-	
-	public function setScene($scene)
-	{
-		$this->scene = $scene;
-		$this->apiParas["scene"] = $scene;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getScene()
-	{
-		return $this->scene;
-	}
 
-	public function setType($type)
-	{
-		$this->type = $type;
-		$this->apiParas["type"] = $type;
-	}
+    public function setScene($scene)
+    {
+        $this->scene = $scene;
+        $this->apiParas["scene"] = $scene;
+    }
 
-	public function getType()
-	{
-		return $this->type;
-	}
+    public function getScene()
+    {
+        return $this->scene;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.trust.user.report.get";
-	}
+    public function setType($type)
+    {
+        $this->type = $type;
+        $this->apiParas["type"] = $type;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getType()
+    {
+        return $this->type;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.trust.user.report.get";
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

@@ -5,130 +5,131 @@
  * @author auto create
  * @since 1.0, 2017-04-14 20:26:03
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayMobilePublicTemplateMessageModifyRequest
 {
-	/** 
-	 * 模板id
-	 **/
-	private $templateId;
-	
-	/** 
-	 * 行业设置
-	 **/
-	private $tradeSetting;
+    /**
+     * 模板id
+     **/
+    private $templateId;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 行业设置
+     **/
+    private $tradeSetting;
 
-	
-	public function setTemplateId($templateId)
-	{
-		$this->templateId = $templateId;
-		$this->apiParas["template_id"] = $templateId;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getTemplateId()
-	{
-		return $this->templateId;
-	}
 
-	public function setTradeSetting($tradeSetting)
-	{
-		$this->tradeSetting = $tradeSetting;
-		$this->apiParas["trade_setting"] = $tradeSetting;
-	}
+    public function setTemplateId($templateId)
+    {
+        $this->templateId = $templateId;
+        $this->apiParas["template_id"] = $templateId;
+    }
 
-	public function getTradeSetting()
-	{
-		return $this->tradeSetting;
-	}
+    public function getTemplateId()
+    {
+        return $this->templateId;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.mobile.public.template.message.modify";
-	}
+    public function setTradeSetting($tradeSetting)
+    {
+        $this->tradeSetting = $tradeSetting;
+        $this->apiParas["trade_setting"] = $tradeSetting;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getTradeSetting()
+    {
+        return $this->tradeSetting;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.mobile.public.template.message.modify";
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

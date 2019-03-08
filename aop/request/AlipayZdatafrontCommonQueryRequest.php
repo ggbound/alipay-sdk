@@ -5,196 +5,197 @@
  * @author auto create
  * @since 1.0, 2018-03-21 11:14:39
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayZdatafrontCommonQueryRequest
 {
-	/** 
-	 * 如果cacheInterval<=0,就直接从外部获取数据；
-如果cacheInterval>0,就先判断cache中的数据是否过期，如果没有过期就返回cache中的数据，如果过期再从外部获取数据并刷新cache，然后返回数据。
-单位：秒
-	 **/
-	private $cacheInterval;
-	
-	/** 
-	 * 通用查询的入参
-	 **/
-	private $queryConditions;
-	
-	/** 
-	 * 服务名称请与相关开发负责人联系
-	 **/
-	private $serviceName;
-	
-	/** 
-	 * 访问该服务的业务
-	 **/
-	private $visitBiz;
-	
-	/** 
-	 * 访问该服务的业务线
-	 **/
-	private $visitBizLine;
-	
-	/** 
-	 * 访问该服务的部门名称
-	 **/
-	private $visitDomain;
+    /**
+     * 如果cacheInterval<=0,就直接从外部获取数据；
+     * 如果cacheInterval>0,就先判断cache中的数据是否过期，如果没有过期就返回cache中的数据，如果过期再从外部获取数据并刷新cache，然后返回数据。
+     * 单位：秒
+     **/
+    private $cacheInterval;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 通用查询的入参
+     **/
+    private $queryConditions;
 
-	
-	public function setCacheInterval($cacheInterval)
-	{
-		$this->cacheInterval = $cacheInterval;
-		$this->apiParas["cache_interval"] = $cacheInterval;
-	}
+    /**
+     * 服务名称请与相关开发负责人联系
+     **/
+    private $serviceName;
 
-	public function getCacheInterval()
-	{
-		return $this->cacheInterval;
-	}
+    /**
+     * 访问该服务的业务
+     **/
+    private $visitBiz;
 
-	public function setQueryConditions($queryConditions)
-	{
-		$this->queryConditions = $queryConditions;
-		$this->apiParas["query_conditions"] = $queryConditions;
-	}
+    /**
+     * 访问该服务的业务线
+     **/
+    private $visitBizLine;
 
-	public function getQueryConditions()
-	{
-		return $this->queryConditions;
-	}
+    /**
+     * 访问该服务的部门名称
+     **/
+    private $visitDomain;
 
-	public function setServiceName($serviceName)
-	{
-		$this->serviceName = $serviceName;
-		$this->apiParas["service_name"] = $serviceName;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getServiceName()
-	{
-		return $this->serviceName;
-	}
 
-	public function setVisitBiz($visitBiz)
-	{
-		$this->visitBiz = $visitBiz;
-		$this->apiParas["visit_biz"] = $visitBiz;
-	}
+    public function setCacheInterval($cacheInterval)
+    {
+        $this->cacheInterval = $cacheInterval;
+        $this->apiParas["cache_interval"] = $cacheInterval;
+    }
 
-	public function getVisitBiz()
-	{
-		return $this->visitBiz;
-	}
+    public function getCacheInterval()
+    {
+        return $this->cacheInterval;
+    }
 
-	public function setVisitBizLine($visitBizLine)
-	{
-		$this->visitBizLine = $visitBizLine;
-		$this->apiParas["visit_biz_line"] = $visitBizLine;
-	}
+    public function setQueryConditions($queryConditions)
+    {
+        $this->queryConditions = $queryConditions;
+        $this->apiParas["query_conditions"] = $queryConditions;
+    }
 
-	public function getVisitBizLine()
-	{
-		return $this->visitBizLine;
-	}
+    public function getQueryConditions()
+    {
+        return $this->queryConditions;
+    }
 
-	public function setVisitDomain($visitDomain)
-	{
-		$this->visitDomain = $visitDomain;
-		$this->apiParas["visit_domain"] = $visitDomain;
-	}
+    public function setServiceName($serviceName)
+    {
+        $this->serviceName = $serviceName;
+        $this->apiParas["service_name"] = $serviceName;
+    }
 
-	public function getVisitDomain()
-	{
-		return $this->visitDomain;
-	}
+    public function getServiceName()
+    {
+        return $this->serviceName;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.zdatafront.common.query";
-	}
+    public function setVisitBiz($visitBiz)
+    {
+        $this->visitBiz = $visitBiz;
+        $this->apiParas["visit_biz"] = $visitBiz;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getVisitBiz()
+    {
+        return $this->visitBiz;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function setVisitBizLine($visitBizLine)
+    {
+        $this->visitBizLine = $visitBizLine;
+        $this->apiParas["visit_biz_line"] = $visitBizLine;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getVisitBizLine()
+    {
+        return $this->visitBizLine;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function setVisitDomain($visitDomain)
+    {
+        $this->visitDomain = $visitDomain;
+        $this->apiParas["visit_domain"] = $visitDomain;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getVisitDomain()
+    {
+        return $this->visitDomain;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.zdatafront.common.query";
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-  }
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
+
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

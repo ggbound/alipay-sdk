@@ -5,178 +5,179 @@
  * @author auto create
  * @since 1.0, 2016-03-29 11:34:32
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayEcapiprodDrawndnContractGetRequest
 {
-	/** 
-	 * 支用编号
-	 **/
-	private $drawndnNo;
-	
-	/** 
-	 * 客户身份证号码，为18位，最后X必须为大写
-	 **/
-	private $entityCode;
-	
-	/** 
-	 * 客户姓名
-	 **/
-	private $entityName;
-	
-	/** 
-	 * 融资平台分配给ISV的编码
-	 **/
-	private $isvCode;
-	
-	/** 
-	 * 融资平台分配给小贷公司的机构编码
-	 **/
-	private $orgCode;
+    /**
+     * 支用编号
+     **/
+    private $drawndnNo;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 客户身份证号码，为18位，最后X必须为大写
+     **/
+    private $entityCode;
 
-	
-	public function setDrawndnNo($drawndnNo)
-	{
-		$this->drawndnNo = $drawndnNo;
-		$this->apiParas["drawndn_no"] = $drawndnNo;
-	}
+    /**
+     * 客户姓名
+     **/
+    private $entityName;
 
-	public function getDrawndnNo()
-	{
-		return $this->drawndnNo;
-	}
+    /**
+     * 融资平台分配给ISV的编码
+     **/
+    private $isvCode;
 
-	public function setEntityCode($entityCode)
-	{
-		$this->entityCode = $entityCode;
-		$this->apiParas["entity_code"] = $entityCode;
-	}
+    /**
+     * 融资平台分配给小贷公司的机构编码
+     **/
+    private $orgCode;
 
-	public function getEntityCode()
-	{
-		return $this->entityCode;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function setEntityName($entityName)
-	{
-		$this->entityName = $entityName;
-		$this->apiParas["entity_name"] = $entityName;
-	}
 
-	public function getEntityName()
-	{
-		return $this->entityName;
-	}
+    public function setDrawndnNo($drawndnNo)
+    {
+        $this->drawndnNo = $drawndnNo;
+        $this->apiParas["drawndn_no"] = $drawndnNo;
+    }
 
-	public function setIsvCode($isvCode)
-	{
-		$this->isvCode = $isvCode;
-		$this->apiParas["isv_code"] = $isvCode;
-	}
+    public function getDrawndnNo()
+    {
+        return $this->drawndnNo;
+    }
 
-	public function getIsvCode()
-	{
-		return $this->isvCode;
-	}
+    public function setEntityCode($entityCode)
+    {
+        $this->entityCode = $entityCode;
+        $this->apiParas["entity_code"] = $entityCode;
+    }
 
-	public function setOrgCode($orgCode)
-	{
-		$this->orgCode = $orgCode;
-		$this->apiParas["org_code"] = $orgCode;
-	}
+    public function getEntityCode()
+    {
+        return $this->entityCode;
+    }
 
-	public function getOrgCode()
-	{
-		return $this->orgCode;
-	}
+    public function setEntityName($entityName)
+    {
+        $this->entityName = $entityName;
+        $this->apiParas["entity_name"] = $entityName;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.ecapiprod.drawndn.contract.get";
-	}
+    public function getEntityName()
+    {
+        return $this->entityName;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function setIsvCode($isvCode)
+    {
+        $this->isvCode = $isvCode;
+        $this->apiParas["isv_code"] = $isvCode;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getIsvCode()
+    {
+        return $this->isvCode;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setOrgCode($orgCode)
+    {
+        $this->orgCode = $orgCode;
+        $this->apiParas["org_code"] = $orgCode;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getOrgCode()
+    {
+        return $this->orgCode;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.ecapiprod.drawndn.contract.get";
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  }
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

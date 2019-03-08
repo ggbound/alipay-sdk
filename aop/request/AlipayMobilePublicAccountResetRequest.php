@@ -5,194 +5,195 @@
  * @author auto create
  * @since 1.0, 2016-12-19 20:52:24
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayMobilePublicAccountResetRequest
 {
-	/** 
-	 * 协议号
-	 **/
-	private $agreementId;
-	
-	/** 
-	 * 绑定账户
-	 **/
-	private $bindAccountNo;
-	
-	/** 
-	 * json
-	 **/
-	private $bizContent;
-	
-	/** 
-	 * 绑定账户的名
-	 **/
-	private $displayName;
-	
-	/** 
-	 * 关注者标识
-	 **/
-	private $fromUserId;
-	
-	/** 
-	 * 绑定账户的用户名
-	 **/
-	private $realName;
+    /**
+     * 协议号
+     **/
+    private $agreementId;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 绑定账户
+     **/
+    private $bindAccountNo;
 
-	
-	public function setAgreementId($agreementId)
-	{
-		$this->agreementId = $agreementId;
-		$this->apiParas["agreement_id"] = $agreementId;
-	}
+    /**
+     * json
+     **/
+    private $bizContent;
 
-	public function getAgreementId()
-	{
-		return $this->agreementId;
-	}
+    /**
+     * 绑定账户的名
+     **/
+    private $displayName;
 
-	public function setBindAccountNo($bindAccountNo)
-	{
-		$this->bindAccountNo = $bindAccountNo;
-		$this->apiParas["bind_account_no"] = $bindAccountNo;
-	}
+    /**
+     * 关注者标识
+     **/
+    private $fromUserId;
 
-	public function getBindAccountNo()
-	{
-		return $this->bindAccountNo;
-	}
+    /**
+     * 绑定账户的用户名
+     **/
+    private $realName;
 
-	public function setBizContent($bizContent)
-	{
-		$this->bizContent = $bizContent;
-		$this->apiParas["biz_content"] = $bizContent;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getBizContent()
-	{
-		return $this->bizContent;
-	}
 
-	public function setDisplayName($displayName)
-	{
-		$this->displayName = $displayName;
-		$this->apiParas["display_name"] = $displayName;
-	}
+    public function setAgreementId($agreementId)
+    {
+        $this->agreementId = $agreementId;
+        $this->apiParas["agreement_id"] = $agreementId;
+    }
 
-	public function getDisplayName()
-	{
-		return $this->displayName;
-	}
+    public function getAgreementId()
+    {
+        return $this->agreementId;
+    }
 
-	public function setFromUserId($fromUserId)
-	{
-		$this->fromUserId = $fromUserId;
-		$this->apiParas["from_user_id"] = $fromUserId;
-	}
+    public function setBindAccountNo($bindAccountNo)
+    {
+        $this->bindAccountNo = $bindAccountNo;
+        $this->apiParas["bind_account_no"] = $bindAccountNo;
+    }
 
-	public function getFromUserId()
-	{
-		return $this->fromUserId;
-	}
+    public function getBindAccountNo()
+    {
+        return $this->bindAccountNo;
+    }
 
-	public function setRealName($realName)
-	{
-		$this->realName = $realName;
-		$this->apiParas["real_name"] = $realName;
-	}
+    public function setBizContent($bizContent)
+    {
+        $this->bizContent = $bizContent;
+        $this->apiParas["biz_content"] = $bizContent;
+    }
 
-	public function getRealName()
-	{
-		return $this->realName;
-	}
+    public function getBizContent()
+    {
+        return $this->bizContent;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.mobile.public.account.reset";
-	}
+    public function setDisplayName($displayName)
+    {
+        $this->displayName = $displayName;
+        $this->apiParas["display_name"] = $displayName;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getDisplayName()
+    {
+        return $this->displayName;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function setFromUserId($fromUserId)
+    {
+        $this->fromUserId = $fromUserId;
+        $this->apiParas["from_user_id"] = $fromUserId;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getFromUserId()
+    {
+        return $this->fromUserId;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function setRealName($realName)
+    {
+        $this->realName = $realName;
+        $this->apiParas["real_name"] = $realName;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getRealName()
+    {
+        return $this->realName;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.mobile.public.account.reset";
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-  }
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
+
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

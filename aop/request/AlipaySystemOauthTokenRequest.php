@@ -5,146 +5,147 @@
  * @author auto create
  * @since 1.0, 2018-07-13 17:18:06
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipaySystemOauthTokenRequest
 {
-	/** 
-	 * 授权码，用户对应用授权后得到。
-	 **/
-	private $code;
-	
-	/** 
-	 * 值为authorization_code时，代表用code换取；值为refresh_token时，代表用refresh_token换取
-	 **/
-	private $grantType;
-	
-	/** 
-	 * 刷新令牌，上次换取访问令牌时得到。见出参的refresh_token字段
-	 **/
-	private $refreshToken;
+    /**
+     * 授权码，用户对应用授权后得到。
+     **/
+    private $code;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 值为authorization_code时，代表用code换取；值为refresh_token时，代表用refresh_token换取
+     **/
+    private $grantType;
 
-	
-	public function setCode($code)
-	{
-		$this->code = $code;
-		$this->apiParas["code"] = $code;
-	}
+    /**
+     * 刷新令牌，上次换取访问令牌时得到。见出参的refresh_token字段
+     **/
+    private $refreshToken;
 
-	public function getCode()
-	{
-		return $this->code;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function setGrantType($grantType)
-	{
-		$this->grantType = $grantType;
-		$this->apiParas["grant_type"] = $grantType;
-	}
 
-	public function getGrantType()
-	{
-		return $this->grantType;
-	}
+    public function setCode($code)
+    {
+        $this->code = $code;
+        $this->apiParas["code"] = $code;
+    }
 
-	public function setRefreshToken($refreshToken)
-	{
-		$this->refreshToken = $refreshToken;
-		$this->apiParas["refresh_token"] = $refreshToken;
-	}
+    public function getCode()
+    {
+        return $this->code;
+    }
 
-	public function getRefreshToken()
-	{
-		return $this->refreshToken;
-	}
+    public function setGrantType($grantType)
+    {
+        $this->grantType = $grantType;
+        $this->apiParas["grant_type"] = $grantType;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.system.oauth.token";
-	}
+    public function getGrantType()
+    {
+        return $this->grantType;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function setRefreshToken($refreshToken)
+    {
+        $this->refreshToken = $refreshToken;
+        $this->apiParas["refresh_token"] = $refreshToken;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getRefreshToken()
+    {
+        return $this->refreshToken;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.system.oauth.token";
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-  }
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

@@ -5,371 +5,372 @@
  * @author auto create
  * @since 1.0, 2017-11-02 20:21:32
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayOpenPublicLifeAgentCreateRequest
 {
-	/** 
-	 * isv代开通生活号的商户支付宝账号或者商户支付宝账号pid（2088开头16位长度的字符串），账号需通过实名认证
-	 **/
-	private $account;
-	
-	/** 
-	 * 生活号背景图片
-	 **/
-	private $backgroundPic;
-	
-	/** 
-	 * 营业执照授权函图片，个体工商户如果使用总公司或其他公司的营业执照认证需上传该授权函图片
-	 **/
-	private $businessLicenseAuthPic;
-	
-	/** 
-	 * 营业执照号码。被代创建商户运营主体为个人账户必填，企业账户无需填写
-	 **/
-	private $businessLicenseNo;
-	
-	/** 
-	 * 营业执照图片。被代创建商户运营主体为个人账户必填，企业账户无需填写
-	 **/
-	private $businessLicensePic;
-	
-	/** 
-	 * 联系人邮箱
-	 **/
-	private $contactEmail;
-	
-	/** 
-	 * 联系人手机号
-	 **/
-	private $contactMobile;
-	
-	/** 
-	 * 联系人名称
-	 **/
-	private $contactName;
-	
-	/** 
-	 * 生活号头像
-	 **/
-	private $logoPic;
-	
-	/** 
-	 * 所属MCCCode，详情可参考
-<a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.INIZWb&articleId=105364&docType=1">商家经营类目</a> 中的“经营类目编码”
-	 **/
-	private $mccCode;
-	
-	/** 
-	 * 外部入驻申请单据号，由开发者生成，并需保证在开发者端不重复。另，如果代创建被驳回，需更换新的申请号，原申请号不能再次使用
-	 **/
-	private $outBizNo;
-	
-	/** 
-	 * 自有知识产权证书图片
-	 **/
-	private $ownIntellectualPic;
-	
-	/** 
-	 * 生活号简介
-	 **/
-	private $publicDesc;
-	
-	/** 
-	 * 生活号名称
-	 **/
-	private $publicName;
-	
-	/** 
-	 * 店铺内景图片，被代创建商户运营主体为个人账户必填，企业账户选填
-	 **/
-	private $shopScenePic;
-	
-	/** 
-	 * 店铺门头照图片，被代创建商户运营主体为个人账户必填，企业账户选填
-	 **/
-	private $shopSignBoardPic;
-	
-	/** 
-	 * 企业特殊资质图片，可参考 <a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.INIZWb&articleId=105364&docType=1">商家经营类目</a> 中的 “需要的特殊资质证书”
-	 **/
-	private $specialLicensePic;
+    /**
+     * isv代开通生活号的商户支付宝账号或者商户支付宝账号pid（2088开头16位长度的字符串），账号需通过实名认证
+     **/
+    private $account;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 生活号背景图片
+     **/
+    private $backgroundPic;
 
-	
-	public function setAccount($account)
-	{
-		$this->account = $account;
-		$this->apiParas["account"] = $account;
-	}
+    /**
+     * 营业执照授权函图片，个体工商户如果使用总公司或其他公司的营业执照认证需上传该授权函图片
+     **/
+    private $businessLicenseAuthPic;
 
-	public function getAccount()
-	{
-		return $this->account;
-	}
+    /**
+     * 营业执照号码。被代创建商户运营主体为个人账户必填，企业账户无需填写
+     **/
+    private $businessLicenseNo;
 
-	public function setBackgroundPic($backgroundPic)
-	{
-		$this->backgroundPic = $backgroundPic;
-		$this->apiParas["background_pic"] = $backgroundPic;
-	}
+    /**
+     * 营业执照图片。被代创建商户运营主体为个人账户必填，企业账户无需填写
+     **/
+    private $businessLicensePic;
 
-	public function getBackgroundPic()
-	{
-		return $this->backgroundPic;
-	}
+    /**
+     * 联系人邮箱
+     **/
+    private $contactEmail;
 
-	public function setBusinessLicenseAuthPic($businessLicenseAuthPic)
-	{
-		$this->businessLicenseAuthPic = $businessLicenseAuthPic;
-		$this->apiParas["business_license_auth_pic"] = $businessLicenseAuthPic;
-	}
+    /**
+     * 联系人手机号
+     **/
+    private $contactMobile;
 
-	public function getBusinessLicenseAuthPic()
-	{
-		return $this->businessLicenseAuthPic;
-	}
+    /**
+     * 联系人名称
+     **/
+    private $contactName;
 
-	public function setBusinessLicenseNo($businessLicenseNo)
-	{
-		$this->businessLicenseNo = $businessLicenseNo;
-		$this->apiParas["business_license_no"] = $businessLicenseNo;
-	}
+    /**
+     * 生活号头像
+     **/
+    private $logoPic;
 
-	public function getBusinessLicenseNo()
-	{
-		return $this->businessLicenseNo;
-	}
+    /**
+     * 所属MCCCode，详情可参考
+     * <a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.INIZWb&articleId=105364&docType=1">商家经营类目</a> 中的“经营类目编码”
+     **/
+    private $mccCode;
 
-	public function setBusinessLicensePic($businessLicensePic)
-	{
-		$this->businessLicensePic = $businessLicensePic;
-		$this->apiParas["business_license_pic"] = $businessLicensePic;
-	}
+    /**
+     * 外部入驻申请单据号，由开发者生成，并需保证在开发者端不重复。另，如果代创建被驳回，需更换新的申请号，原申请号不能再次使用
+     **/
+    private $outBizNo;
 
-	public function getBusinessLicensePic()
-	{
-		return $this->businessLicensePic;
-	}
+    /**
+     * 自有知识产权证书图片
+     **/
+    private $ownIntellectualPic;
 
-	public function setContactEmail($contactEmail)
-	{
-		$this->contactEmail = $contactEmail;
-		$this->apiParas["contact_email"] = $contactEmail;
-	}
+    /**
+     * 生活号简介
+     **/
+    private $publicDesc;
 
-	public function getContactEmail()
-	{
-		return $this->contactEmail;
-	}
+    /**
+     * 生活号名称
+     **/
+    private $publicName;
 
-	public function setContactMobile($contactMobile)
-	{
-		$this->contactMobile = $contactMobile;
-		$this->apiParas["contact_mobile"] = $contactMobile;
-	}
+    /**
+     * 店铺内景图片，被代创建商户运营主体为个人账户必填，企业账户选填
+     **/
+    private $shopScenePic;
 
-	public function getContactMobile()
-	{
-		return $this->contactMobile;
-	}
+    /**
+     * 店铺门头照图片，被代创建商户运营主体为个人账户必填，企业账户选填
+     **/
+    private $shopSignBoardPic;
 
-	public function setContactName($contactName)
-	{
-		$this->contactName = $contactName;
-		$this->apiParas["contact_name"] = $contactName;
-	}
+    /**
+     * 企业特殊资质图片，可参考 <a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.INIZWb&articleId=105364&docType=1">商家经营类目</a> 中的 “需要的特殊资质证书”
+     **/
+    private $specialLicensePic;
 
-	public function getContactName()
-	{
-		return $this->contactName;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function setLogoPic($logoPic)
-	{
-		$this->logoPic = $logoPic;
-		$this->apiParas["logo_pic"] = $logoPic;
-	}
 
-	public function getLogoPic()
-	{
-		return $this->logoPic;
-	}
+    public function setAccount($account)
+    {
+        $this->account = $account;
+        $this->apiParas["account"] = $account;
+    }
 
-	public function setMccCode($mccCode)
-	{
-		$this->mccCode = $mccCode;
-		$this->apiParas["mcc_code"] = $mccCode;
-	}
+    public function getAccount()
+    {
+        return $this->account;
+    }
 
-	public function getMccCode()
-	{
-		return $this->mccCode;
-	}
+    public function setBackgroundPic($backgroundPic)
+    {
+        $this->backgroundPic = $backgroundPic;
+        $this->apiParas["background_pic"] = $backgroundPic;
+    }
 
-	public function setOutBizNo($outBizNo)
-	{
-		$this->outBizNo = $outBizNo;
-		$this->apiParas["out_biz_no"] = $outBizNo;
-	}
+    public function getBackgroundPic()
+    {
+        return $this->backgroundPic;
+    }
 
-	public function getOutBizNo()
-	{
-		return $this->outBizNo;
-	}
+    public function setBusinessLicenseAuthPic($businessLicenseAuthPic)
+    {
+        $this->businessLicenseAuthPic = $businessLicenseAuthPic;
+        $this->apiParas["business_license_auth_pic"] = $businessLicenseAuthPic;
+    }
 
-	public function setOwnIntellectualPic($ownIntellectualPic)
-	{
-		$this->ownIntellectualPic = $ownIntellectualPic;
-		$this->apiParas["own_intellectual_pic"] = $ownIntellectualPic;
-	}
+    public function getBusinessLicenseAuthPic()
+    {
+        return $this->businessLicenseAuthPic;
+    }
 
-	public function getOwnIntellectualPic()
-	{
-		return $this->ownIntellectualPic;
-	}
+    public function setBusinessLicenseNo($businessLicenseNo)
+    {
+        $this->businessLicenseNo = $businessLicenseNo;
+        $this->apiParas["business_license_no"] = $businessLicenseNo;
+    }
 
-	public function setPublicDesc($publicDesc)
-	{
-		$this->publicDesc = $publicDesc;
-		$this->apiParas["public_desc"] = $publicDesc;
-	}
+    public function getBusinessLicenseNo()
+    {
+        return $this->businessLicenseNo;
+    }
 
-	public function getPublicDesc()
-	{
-		return $this->publicDesc;
-	}
+    public function setBusinessLicensePic($businessLicensePic)
+    {
+        $this->businessLicensePic = $businessLicensePic;
+        $this->apiParas["business_license_pic"] = $businessLicensePic;
+    }
 
-	public function setPublicName($publicName)
-	{
-		$this->publicName = $publicName;
-		$this->apiParas["public_name"] = $publicName;
-	}
+    public function getBusinessLicensePic()
+    {
+        return $this->businessLicensePic;
+    }
 
-	public function getPublicName()
-	{
-		return $this->publicName;
-	}
+    public function setContactEmail($contactEmail)
+    {
+        $this->contactEmail = $contactEmail;
+        $this->apiParas["contact_email"] = $contactEmail;
+    }
 
-	public function setShopScenePic($shopScenePic)
-	{
-		$this->shopScenePic = $shopScenePic;
-		$this->apiParas["shop_scene_pic"] = $shopScenePic;
-	}
+    public function getContactEmail()
+    {
+        return $this->contactEmail;
+    }
 
-	public function getShopScenePic()
-	{
-		return $this->shopScenePic;
-	}
+    public function setContactMobile($contactMobile)
+    {
+        $this->contactMobile = $contactMobile;
+        $this->apiParas["contact_mobile"] = $contactMobile;
+    }
 
-	public function setShopSignBoardPic($shopSignBoardPic)
-	{
-		$this->shopSignBoardPic = $shopSignBoardPic;
-		$this->apiParas["shop_sign_board_pic"] = $shopSignBoardPic;
-	}
+    public function getContactMobile()
+    {
+        return $this->contactMobile;
+    }
 
-	public function getShopSignBoardPic()
-	{
-		return $this->shopSignBoardPic;
-	}
+    public function setContactName($contactName)
+    {
+        $this->contactName = $contactName;
+        $this->apiParas["contact_name"] = $contactName;
+    }
 
-	public function setSpecialLicensePic($specialLicensePic)
-	{
-		$this->specialLicensePic = $specialLicensePic;
-		$this->apiParas["special_license_pic"] = $specialLicensePic;
-	}
+    public function getContactName()
+    {
+        return $this->contactName;
+    }
 
-	public function getSpecialLicensePic()
-	{
-		return $this->specialLicensePic;
-	}
+    public function setLogoPic($logoPic)
+    {
+        $this->logoPic = $logoPic;
+        $this->apiParas["logo_pic"] = $logoPic;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.open.public.life.agent.create";
-	}
+    public function getLogoPic()
+    {
+        return $this->logoPic;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function setMccCode($mccCode)
+    {
+        $this->mccCode = $mccCode;
+        $this->apiParas["mcc_code"] = $mccCode;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getMccCode()
+    {
+        return $this->mccCode;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setOutBizNo($outBizNo)
+    {
+        $this->outBizNo = $outBizNo;
+        $this->apiParas["out_biz_no"] = $outBizNo;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getOutBizNo()
+    {
+        return $this->outBizNo;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setOwnIntellectualPic($ownIntellectualPic)
+    {
+        $this->ownIntellectualPic = $ownIntellectualPic;
+        $this->apiParas["own_intellectual_pic"] = $ownIntellectualPic;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getOwnIntellectualPic()
+    {
+        return $this->ownIntellectualPic;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function setPublicDesc($publicDesc)
+    {
+        $this->publicDesc = $publicDesc;
+        $this->apiParas["public_desc"] = $publicDesc;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getPublicDesc()
+    {
+        return $this->publicDesc;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setPublicName($publicName)
+    {
+        $this->publicName = $publicName;
+        $this->apiParas["public_name"] = $publicName;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getPublicName()
+    {
+        return $this->publicName;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function setShopScenePic($shopScenePic)
+    {
+        $this->shopScenePic = $shopScenePic;
+        $this->apiParas["shop_scene_pic"] = $shopScenePic;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getShopScenePic()
+    {
+        return $this->shopScenePic;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setShopSignBoardPic($shopSignBoardPic)
+    {
+        $this->shopSignBoardPic = $shopSignBoardPic;
+        $this->apiParas["shop_sign_board_pic"] = $shopSignBoardPic;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function getShopSignBoardPic()
+    {
+        return $this->shopSignBoardPic;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setSpecialLicensePic($specialLicensePic)
+    {
+        $this->specialLicensePic = $specialLicensePic;
+        $this->apiParas["special_license_pic"] = $specialLicensePic;
+    }
 
-  }
+    public function getSpecialLicensePic()
+    {
+        return $this->specialLicensePic;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getApiMethodName()
+    {
+        return "alipay.open.public.life.agent.create";
+    }
+
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
+
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
+
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
+
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
+
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
+
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
+
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
+
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
+
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
+
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
+
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
+
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

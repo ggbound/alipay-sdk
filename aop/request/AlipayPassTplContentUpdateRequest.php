@@ -5,194 +5,195 @@
  * @author auto create
  * @since 1.0, 2017-12-07 16:33:36
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayPassTplContentUpdateRequest
 {
-	/** 
-	 * 代理商代替商户发放卡券后，再代替商户更新卡券时，此值为商户的pid/appid
-	 **/
-	private $channelId;
-	
-	/** 
-	 * 支付宝pass唯一标识
-	 **/
-	private $serialNumber;
-	
-	/** 
-	 * 券状态,支持更新为USED,CLOSED两种状态
-	 **/
-	private $status;
-	
-	/** 
-	 * 模版动态参数信息【支付宝pass模版参数键值对JSON字符串】
-	 **/
-	private $tplParams;
-	
-	/** 
-	 * 核销码串值【当状态变更为USED时，建议传入】
-	 **/
-	private $verifyCode;
-	
-	/** 
-	 * 核销方式，目前支持：wave（声波方式）、qrcode（二维码方式）、barcode（条码方式）、input（文本方式，即手工输入方式）。pass和verify_type不能同时为空
-	 **/
-	private $verifyType;
+    /**
+     * 代理商代替商户发放卡券后，再代替商户更新卡券时，此值为商户的pid/appid
+     **/
+    private $channelId;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 支付宝pass唯一标识
+     **/
+    private $serialNumber;
 
-	
-	public function setChannelId($channelId)
-	{
-		$this->channelId = $channelId;
-		$this->apiParas["channel_id"] = $channelId;
-	}
+    /**
+     * 券状态,支持更新为USED,CLOSED两种状态
+     **/
+    private $status;
 
-	public function getChannelId()
-	{
-		return $this->channelId;
-	}
+    /**
+     * 模版动态参数信息【支付宝pass模版参数键值对JSON字符串】
+     **/
+    private $tplParams;
 
-	public function setSerialNumber($serialNumber)
-	{
-		$this->serialNumber = $serialNumber;
-		$this->apiParas["serial_number"] = $serialNumber;
-	}
+    /**
+     * 核销码串值【当状态变更为USED时，建议传入】
+     **/
+    private $verifyCode;
 
-	public function getSerialNumber()
-	{
-		return $this->serialNumber;
-	}
+    /**
+     * 核销方式，目前支持：wave（声波方式）、qrcode（二维码方式）、barcode（条码方式）、input（文本方式，即手工输入方式）。pass和verify_type不能同时为空
+     **/
+    private $verifyType;
 
-	public function setStatus($status)
-	{
-		$this->status = $status;
-		$this->apiParas["status"] = $status;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getStatus()
-	{
-		return $this->status;
-	}
 
-	public function setTplParams($tplParams)
-	{
-		$this->tplParams = $tplParams;
-		$this->apiParas["tpl_params"] = $tplParams;
-	}
+    public function setChannelId($channelId)
+    {
+        $this->channelId = $channelId;
+        $this->apiParas["channel_id"] = $channelId;
+    }
 
-	public function getTplParams()
-	{
-		return $this->tplParams;
-	}
+    public function getChannelId()
+    {
+        return $this->channelId;
+    }
 
-	public function setVerifyCode($verifyCode)
-	{
-		$this->verifyCode = $verifyCode;
-		$this->apiParas["verify_code"] = $verifyCode;
-	}
+    public function setSerialNumber($serialNumber)
+    {
+        $this->serialNumber = $serialNumber;
+        $this->apiParas["serial_number"] = $serialNumber;
+    }
 
-	public function getVerifyCode()
-	{
-		return $this->verifyCode;
-	}
+    public function getSerialNumber()
+    {
+        return $this->serialNumber;
+    }
 
-	public function setVerifyType($verifyType)
-	{
-		$this->verifyType = $verifyType;
-		$this->apiParas["verify_type"] = $verifyType;
-	}
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        $this->apiParas["status"] = $status;
+    }
 
-	public function getVerifyType()
-	{
-		return $this->verifyType;
-	}
+    public function getStatus()
+    {
+        return $this->status;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.pass.tpl.content.update";
-	}
+    public function setTplParams($tplParams)
+    {
+        $this->tplParams = $tplParams;
+        $this->apiParas["tpl_params"] = $tplParams;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getTplParams()
+    {
+        return $this->tplParams;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function setVerifyCode($verifyCode)
+    {
+        $this->verifyCode = $verifyCode;
+        $this->apiParas["verify_code"] = $verifyCode;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getVerifyCode()
+    {
+        return $this->verifyCode;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function setVerifyType($verifyType)
+    {
+        $this->verifyType = $verifyType;
+        $this->apiParas["verify_type"] = $verifyType;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getVerifyType()
+    {
+        return $this->verifyType;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.pass.tpl.content.update";
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-  }
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
+
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

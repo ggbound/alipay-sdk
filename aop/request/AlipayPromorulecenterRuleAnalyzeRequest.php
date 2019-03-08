@@ -5,146 +5,147 @@
  * @author auto create
  * @since 1.0, 2017-10-09 17:38:20
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayPromorulecenterRuleAnalyzeRequest
 {
-	/** 
-	 * 业务id
-	 **/
-	private $bizId;
-	
-	/** 
-	 * 规则id
-	 **/
-	private $ruleUuid;
-	
-	/** 
-	 * 支付宝用户id
-	 **/
-	private $userId;
+    /**
+     * 业务id
+     **/
+    private $bizId;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 规则id
+     **/
+    private $ruleUuid;
 
-	
-	public function setBizId($bizId)
-	{
-		$this->bizId = $bizId;
-		$this->apiParas["biz_id"] = $bizId;
-	}
+    /**
+     * 支付宝用户id
+     **/
+    private $userId;
 
-	public function getBizId()
-	{
-		return $this->bizId;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function setRuleUuid($ruleUuid)
-	{
-		$this->ruleUuid = $ruleUuid;
-		$this->apiParas["rule_uuid"] = $ruleUuid;
-	}
 
-	public function getRuleUuid()
-	{
-		return $this->ruleUuid;
-	}
+    public function setBizId($bizId)
+    {
+        $this->bizId = $bizId;
+        $this->apiParas["biz_id"] = $bizId;
+    }
 
-	public function setUserId($userId)
-	{
-		$this->userId = $userId;
-		$this->apiParas["user_id"] = $userId;
-	}
+    public function getBizId()
+    {
+        return $this->bizId;
+    }
 
-	public function getUserId()
-	{
-		return $this->userId;
-	}
+    public function setRuleUuid($ruleUuid)
+    {
+        $this->ruleUuid = $ruleUuid;
+        $this->apiParas["rule_uuid"] = $ruleUuid;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.promorulecenter.rule.analyze";
-	}
+    public function getRuleUuid()
+    {
+        return $this->ruleUuid;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+        $this->apiParas["user_id"] = $userId;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getUserId()
+    {
+        return $this->userId;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.promorulecenter.rule.analyze";
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-  }
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

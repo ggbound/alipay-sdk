@@ -5,162 +5,163 @@
  * @author auto create
  * @since 1.0, 2018-07-13 17:18:06
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayOfflineMaterialImageUploadRequest
 {
-	/** 
-	 * 图片/视频二进制内容，图片/视频大小不能超过5M
-	 **/
-	private $imageContent;
-	
-	/** 
-	 * 图片/视频名称
-	 **/
-	private $imageName;
-	
-	/** 
-	 * 用于显示指定图片/视频所属的partnerId（支付宝内部使用，外部商户无需填写此字段）
-	 **/
-	private $imagePid;
-	
-	/** 
-	 * 图片/视频格式
-	 **/
-	private $imageType;
+    /**
+     * 图片/视频二进制内容，图片/视频大小不能超过5M
+     **/
+    private $imageContent;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 图片/视频名称
+     **/
+    private $imageName;
 
-	
-	public function setImageContent($imageContent)
-	{
-		$this->imageContent = $imageContent;
-		$this->apiParas["image_content"] = $imageContent;
-	}
+    /**
+     * 用于显示指定图片/视频所属的partnerId（支付宝内部使用，外部商户无需填写此字段）
+     **/
+    private $imagePid;
 
-	public function getImageContent()
-	{
-		return $this->imageContent;
-	}
+    /**
+     * 图片/视频格式
+     **/
+    private $imageType;
 
-	public function setImageName($imageName)
-	{
-		$this->imageName = $imageName;
-		$this->apiParas["image_name"] = $imageName;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getImageName()
-	{
-		return $this->imageName;
-	}
 
-	public function setImagePid($imagePid)
-	{
-		$this->imagePid = $imagePid;
-		$this->apiParas["image_pid"] = $imagePid;
-	}
+    public function setImageContent($imageContent)
+    {
+        $this->imageContent = $imageContent;
+        $this->apiParas["image_content"] = $imageContent;
+    }
 
-	public function getImagePid()
-	{
-		return $this->imagePid;
-	}
+    public function getImageContent()
+    {
+        return $this->imageContent;
+    }
 
-	public function setImageType($imageType)
-	{
-		$this->imageType = $imageType;
-		$this->apiParas["image_type"] = $imageType;
-	}
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
+        $this->apiParas["image_name"] = $imageName;
+    }
 
-	public function getImageType()
-	{
-		return $this->imageType;
-	}
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.offline.material.image.upload";
-	}
+    public function setImagePid($imagePid)
+    {
+        $this->imagePid = $imagePid;
+        $this->apiParas["image_pid"] = $imagePid;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getImagePid()
+    {
+        return $this->imagePid;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function setImageType($imageType)
+    {
+        $this->imageType = $imageType;
+        $this->apiParas["image_type"] = $imageType;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getImageType()
+    {
+        return $this->imageType;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.offline.material.image.upload";
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  }
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

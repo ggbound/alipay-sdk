@@ -5,194 +5,195 @@
  * @author auto create
  * @since 1.0, 2014-06-12 17:16:41
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayEcardEduPublicBindRequest
 {
-	/** 
-	 * 机构编码
-	 **/
-	private $agentCode;
-	
-	/** 
-	 * 公众账号协议Id
-	 **/
-	private $agreementId;
-	
-	/** 
-	 * 支付宝userId
-	 **/
-	private $alipayUserId;
-	
-	/** 
-	 * 一卡通姓名
-	 **/
-	private $cardName;
-	
-	/** 
-	 * 一卡通卡号
-	 **/
-	private $cardNo;
-	
-	/** 
-	 * 公众账号id
-	 **/
-	private $publicId;
+    /**
+     * 机构编码
+     **/
+    private $agentCode;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 公众账号协议Id
+     **/
+    private $agreementId;
 
-	
-	public function setAgentCode($agentCode)
-	{
-		$this->agentCode = $agentCode;
-		$this->apiParas["agent_code"] = $agentCode;
-	}
+    /**
+     * 支付宝userId
+     **/
+    private $alipayUserId;
 
-	public function getAgentCode()
-	{
-		return $this->agentCode;
-	}
+    /**
+     * 一卡通姓名
+     **/
+    private $cardName;
 
-	public function setAgreementId($agreementId)
-	{
-		$this->agreementId = $agreementId;
-		$this->apiParas["agreement_id"] = $agreementId;
-	}
+    /**
+     * 一卡通卡号
+     **/
+    private $cardNo;
 
-	public function getAgreementId()
-	{
-		return $this->agreementId;
-	}
+    /**
+     * 公众账号id
+     **/
+    private $publicId;
 
-	public function setAlipayUserId($alipayUserId)
-	{
-		$this->alipayUserId = $alipayUserId;
-		$this->apiParas["alipay_user_id"] = $alipayUserId;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getAlipayUserId()
-	{
-		return $this->alipayUserId;
-	}
 
-	public function setCardName($cardName)
-	{
-		$this->cardName = $cardName;
-		$this->apiParas["card_name"] = $cardName;
-	}
+    public function setAgentCode($agentCode)
+    {
+        $this->agentCode = $agentCode;
+        $this->apiParas["agent_code"] = $agentCode;
+    }
 
-	public function getCardName()
-	{
-		return $this->cardName;
-	}
+    public function getAgentCode()
+    {
+        return $this->agentCode;
+    }
 
-	public function setCardNo($cardNo)
-	{
-		$this->cardNo = $cardNo;
-		$this->apiParas["card_no"] = $cardNo;
-	}
+    public function setAgreementId($agreementId)
+    {
+        $this->agreementId = $agreementId;
+        $this->apiParas["agreement_id"] = $agreementId;
+    }
 
-	public function getCardNo()
-	{
-		return $this->cardNo;
-	}
+    public function getAgreementId()
+    {
+        return $this->agreementId;
+    }
 
-	public function setPublicId($publicId)
-	{
-		$this->publicId = $publicId;
-		$this->apiParas["public_id"] = $publicId;
-	}
+    public function setAlipayUserId($alipayUserId)
+    {
+        $this->alipayUserId = $alipayUserId;
+        $this->apiParas["alipay_user_id"] = $alipayUserId;
+    }
 
-	public function getPublicId()
-	{
-		return $this->publicId;
-	}
+    public function getAlipayUserId()
+    {
+        return $this->alipayUserId;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.ecard.edu.public.bind";
-	}
+    public function setCardName($cardName)
+    {
+        $this->cardName = $cardName;
+        $this->apiParas["card_name"] = $cardName;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getCardName()
+    {
+        return $this->cardName;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function setCardNo($cardNo)
+    {
+        $this->cardNo = $cardNo;
+        $this->apiParas["card_no"] = $cardNo;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function getCardNo()
+    {
+        return $this->cardNo;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function setPublicId($publicId)
+    {
+        $this->publicId = $publicId;
+        $this->apiParas["public_id"] = $publicId;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getPublicId()
+    {
+        return $this->publicId;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.ecard.edu.public.bind";
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-  }
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
+
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

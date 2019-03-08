@@ -5,178 +5,179 @@
  * @author auto create
  * @since 1.0, 2015-03-11 15:19:54
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayMobileRecommendGetRequest
 {
-	/** 
-	 * 请求上下文扩展信息，需要与接口负责人约定。格式为json对象。
-	 **/
-	private $extInfo;
-	
-	/** 
-	 * 期望获取的最多推荐数量, 默认获取一个推荐内容, 0表示获取所有推荐内容
-	 **/
-	private $limit;
-	
-	/** 
-	 * 所使用的场景id，请向接口负责人申请
-	 **/
-	private $sceneId;
-	
-	/** 
-	 * 获取推荐信息的开始位置, 默认从0开始
-	 **/
-	private $startIdx;
-	
-	/** 
-	 * 用户openid
-	 **/
-	private $userId;
+    /**
+     * 请求上下文扩展信息，需要与接口负责人约定。格式为json对象。
+     **/
+    private $extInfo;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 期望获取的最多推荐数量, 默认获取一个推荐内容, 0表示获取所有推荐内容
+     **/
+    private $limit;
 
-	
-	public function setExtInfo($extInfo)
-	{
-		$this->extInfo = $extInfo;
-		$this->apiParas["ext_info"] = $extInfo;
-	}
+    /**
+     * 所使用的场景id，请向接口负责人申请
+     **/
+    private $sceneId;
 
-	public function getExtInfo()
-	{
-		return $this->extInfo;
-	}
+    /**
+     * 获取推荐信息的开始位置, 默认从0开始
+     **/
+    private $startIdx;
 
-	public function setLimit($limit)
-	{
-		$this->limit = $limit;
-		$this->apiParas["limit"] = $limit;
-	}
+    /**
+     * 用户openid
+     **/
+    private $userId;
 
-	public function getLimit()
-	{
-		return $this->limit;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function setSceneId($sceneId)
-	{
-		$this->sceneId = $sceneId;
-		$this->apiParas["scene_id"] = $sceneId;
-	}
 
-	public function getSceneId()
-	{
-		return $this->sceneId;
-	}
+    public function setExtInfo($extInfo)
+    {
+        $this->extInfo = $extInfo;
+        $this->apiParas["ext_info"] = $extInfo;
+    }
 
-	public function setStartIdx($startIdx)
-	{
-		$this->startIdx = $startIdx;
-		$this->apiParas["start_idx"] = $startIdx;
-	}
+    public function getExtInfo()
+    {
+        return $this->extInfo;
+    }
 
-	public function getStartIdx()
-	{
-		return $this->startIdx;
-	}
+    public function setLimit($limit)
+    {
+        $this->limit = $limit;
+        $this->apiParas["limit"] = $limit;
+    }
 
-	public function setUserId($userId)
-	{
-		$this->userId = $userId;
-		$this->apiParas["user_id"] = $userId;
-	}
+    public function getLimit()
+    {
+        return $this->limit;
+    }
 
-	public function getUserId()
-	{
-		return $this->userId;
-	}
+    public function setSceneId($sceneId)
+    {
+        $this->sceneId = $sceneId;
+        $this->apiParas["scene_id"] = $sceneId;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.mobile.recommend.get";
-	}
+    public function getSceneId()
+    {
+        return $this->sceneId;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function setStartIdx($startIdx)
+    {
+        $this->startIdx = $startIdx;
+        $this->apiParas["start_idx"] = $startIdx;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getStartIdx()
+    {
+        return $this->startIdx;
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+        $this->apiParas["user_id"] = $userId;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getUserId()
+    {
+        return $this->userId;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.mobile.recommend.get";
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-  }
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
+
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }

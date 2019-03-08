@@ -5,133 +5,134 @@
  * @author auto create
  * @since 1.0, 2018-01-03 16:35:37
  */
+
+namespace AliPay\Aop\Request;
+
 class AlipayMobileShakeUserQueryRequest
 {
-	/** 
-	 * 动态ID
-	 **/
-	private $dynamicId;
-	
-	/** 
-	 * 动态ID类型：
-wave_code：声波
-qr_code：二维码
-bar_code：条码
-	 **/
-	private $dynamicIdType;
+    /**
+     * 动态ID
+     **/
+    private $dynamicId;
 
-	private $apiParas = array();
-	private $terminalType;
-	private $terminalInfo;
-	private $prodCode;
-	private $apiVersion="1.0";
-	private $notifyUrl;
-	private $returnUrl;
-    private $needEncrypt=false;
+    /**
+     * 动态ID类型：
+     * wave_code：声波
+     * qr_code：二维码
+     * bar_code：条码
+     **/
+    private $dynamicIdType;
 
-	
-	public function setDynamicId($dynamicId)
-	{
-		$this->dynamicId = $dynamicId;
-		$this->apiParas["dynamic_id"] = $dynamicId;
-	}
+    private $apiParas = array();
+    private $terminalType;
+    private $terminalInfo;
+    private $prodCode;
+    private $apiVersion = "1.0";
+    private $notifyUrl;
+    private $returnUrl;
+    private $needEncrypt = false;
 
-	public function getDynamicId()
-	{
-		return $this->dynamicId;
-	}
 
-	public function setDynamicIdType($dynamicIdType)
-	{
-		$this->dynamicIdType = $dynamicIdType;
-		$this->apiParas["dynamic_id_type"] = $dynamicIdType;
-	}
+    public function setDynamicId($dynamicId)
+    {
+        $this->dynamicId = $dynamicId;
+        $this->apiParas["dynamic_id"] = $dynamicId;
+    }
 
-	public function getDynamicIdType()
-	{
-		return $this->dynamicIdType;
-	}
+    public function getDynamicId()
+    {
+        return $this->dynamicId;
+    }
 
-	public function getApiMethodName()
-	{
-		return "alipay.mobile.shake.user.query";
-	}
+    public function setDynamicIdType($dynamicIdType)
+    {
+        $this->dynamicIdType = $dynamicIdType;
+        $this->apiParas["dynamic_id_type"] = $dynamicIdType;
+    }
 
-	public function setNotifyUrl($notifyUrl)
-	{
-		$this->notifyUrl=$notifyUrl;
-	}
+    public function getDynamicIdType()
+    {
+        return $this->dynamicIdType;
+    }
 
-	public function getNotifyUrl()
-	{
-		return $this->notifyUrl;
-	}
+    public function getApiMethodName()
+    {
+        return "alipay.mobile.shake.user.query";
+    }
 
-	public function setReturnUrl($returnUrl)
-	{
-		$this->returnUrl=$returnUrl;
-	}
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
 
-	public function getReturnUrl()
-	{
-		return $this->returnUrl;
-	}
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
 
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
 
-	public function getTerminalType()
-	{
-		return $this->terminalType;
-	}
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
 
-	public function setTerminalType($terminalType)
-	{
-		$this->terminalType = $terminalType;
-	}
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
 
-	public function getTerminalInfo()
-	{
-		return $this->terminalInfo;
-	}
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
 
-	public function setTerminalInfo($terminalInfo)
-	{
-		$this->terminalInfo = $terminalInfo;
-	}
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
 
-	public function getProdCode()
-	{
-		return $this->prodCode;
-	}
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
 
-	public function setProdCode($prodCode)
-	{
-		$this->prodCode = $prodCode;
-	}
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
 
-	public function setApiVersion($apiVersion)
-	{
-		$this->apiVersion=$apiVersion;
-	}
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
 
-	public function getApiVersion()
-	{
-		return $this->apiVersion;
-	}
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
-  public function setNeedEncrypt($needEncrypt)
-  {
+    public function setApiVersion($apiVersion)
+    {
+        $this->apiVersion = $apiVersion;
+    }
 
-     $this->needEncrypt=$needEncrypt;
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
 
-  }
+    public function setNeedEncrypt($needEncrypt)
+    {
+        $this->needEncrypt = $needEncrypt;
+    }
 
-  public function getNeedEncrypt()
-  {
-    return $this->needEncrypt;
-  }
+    public function getNeedEncrypt()
+    {
+        return $this->needEncrypt;
+    }
 
 }
