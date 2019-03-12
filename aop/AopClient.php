@@ -15,6 +15,9 @@ class AopClient
     //私钥值
     public $rsaPrivateKey;
 
+    //公钥文件路径
+    public $rsaPublicKeyFilePath;
+
     //网关
     public $gatewayUrl = "https://openapi.alipay.com/gateway.do";
 
