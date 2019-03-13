@@ -49,17 +49,18 @@ class AopClient
     //加密XML节点名称
     private $ENCRYPT_XML_NODE_NAME = "response_encrypted";
 
-    private $needEncrypt = false;
-
     //签名类型
     public $signType = "RSA";
 
-    //加密密钥和类型
+    //加密密钥
     public $encryptKey;
 
+    //加密类型
     public $encryptType = "AES";
 
     protected $alipaySdkVersion = "alipay-sdk-php-20180705";
+
+    public $framework = "ThinkPHP";
 
     /**
      * @param $params
@@ -248,31 +249,29 @@ class AopClient
                 curl_setopt($ch, CURLOPT_POSTFIELDS, substr($postBodyString, 0, -1));
             }
         }
+        $headers = array('content-type: application/x-www-form-urlencoded;charset=' . $this->postCharset);
 
         if ($postMultipart) {
-
-            $headers = array('content-type: multipart/form-data;charset=' . $this->postCharset . ';boundary=' . $this->getMillisecond());
-        } else {
-
-            $headers = array('content-type: application/x-www-form-urlencoded;charset=' . $this->postCharset);
+            if (!version_compare(PHP_VERSION, '7.0.0', '>=')) {
+                $headers = array('content-type: multipart/form-data;charset=' . $this->postCharset . ';boundary=' . $this->getMillisecond());
+            }
         }
+
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-
-        $reponse = curl_exec($ch);
+        $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-
             throw new \Exception(curl_error($ch), 0);
         } else {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             if (200 !== $httpStatusCode) {
-                throw new \Exception($reponse, $httpStatusCode);
+                throw new \Exception($response, $httpStatusCode);
             }
         }
 
         curl_close($ch);
-        return $reponse;
+        return $response;
     }
 
     /**
@@ -293,9 +292,6 @@ class AopClient
     protected function logCommunicationError($apiName, $requestUrl, $errorCode, $responseTxt)
     {
         $localIp = isset ($_SERVER["SERVER_ADDR"]) ? $_SERVER["SERVER_ADDR"] : "CLI";
-        $logger = new LtLogger;
-        $logger->conf["log_file"] = rtrim(AOP_SDK_WORK_DIR, '\\/') . '/' . "logs/aop_comm_err_" . $this->appId . "_" . date("Y-m-d") . ".log";
-        $logger->conf["separator"] = "^_^";
         $logData = array(
             date("Y-m-d H:i:s"),
             $apiName,
@@ -307,7 +303,10 @@ class AopClient
             $errorCode,
             str_replace("\n", "", $responseTxt)
         );
-        $logger->log($logData);
+
+        if ($this->framework === 'ThinkPHP') {
+            Think\Log::record(var_export($logData, true), 'AliPay', true);
+        }
     }
 
     /**
@@ -613,6 +612,7 @@ class AopClient
     /**
      * @param $paramsArray
      * @return mixed|\SimpleXMLElement
+     * @throws \Exception
      */
     public function exec($paramsArray)
     {
@@ -718,7 +718,6 @@ class AopClient
 
         //调用openssl内置方法验签，返回bool值
 
-        $result = FALSE;
         if ("RSA2" == $signType) {
             $result = (openssl_verify($data, base64_decode($sign), $res, OPENSSL_ALGO_SHA256) === 1);
         } else {
