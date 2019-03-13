@@ -249,12 +249,13 @@ class AopClient
                 curl_setopt($ch, CURLOPT_POSTFIELDS, substr($postBodyString, 0, -1));
             }
         }
-        $headers = array('content-type: application/x-www-form-urlencoded;charset=' . $this->postCharset);
 
         if ($postMultipart) {
             if (!version_compare(PHP_VERSION, '7.0.0', '>=')) {
                 $headers = array('content-type: multipart/form-data;charset=' . $this->postCharset . ';boundary=' . $this->getMillisecond());
             }
+        } else {
+            $headers = array('content-type: application/x-www-form-urlencoded;charset=' . $this->postCharset);
         }
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
