@@ -14,7 +14,9 @@
     },
     "autoload":{
        "psr-4":{
-           "AliPay\\Aop\\":"aop"
+           "AliPay\\Aop\\":"aop",
+           "AliPay\\Aop\\Request\\":"aop\\request",
+           "AliPay\\Aop\\Test\\":"aop\\test"
        }
     },
     "license": "MIT",
