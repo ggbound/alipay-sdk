@@ -4,6 +4,7 @@ namespace AliPay\Aop;
 
 class AopClient
 {
+
     //应用ID
     public $appId;
 
@@ -34,14 +35,19 @@ class AopClient
     //使用读取字符串格式，请只传递该值
     public $alipayrsaPublicKey;
 
+    //是否开启调试模式
     public $debugInfo = false;
 
+    //默认编码
     private $fileCharset = "UTF-8";
 
+    //返回后缀
     private $RESPONSE_SUFFIX = "_response";
 
+    //错误返回
     private $ERROR_RESPONSE = "error_response";
 
+    //签名字段名
     private $SIGN_NODE_NAME = "sign";
 
     //加密XML节点名称
@@ -56,8 +62,10 @@ class AopClient
     //加密类型
     public $encryptType = "AES";
 
+    //SDK版本
     protected $alipaySdkVersion = "alipay-sdk-php-20180705";
 
+    //采用的框架
     public $framework = "ThinkPHP";
 
     /**
