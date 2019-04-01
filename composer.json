@@ -10,7 +10,8 @@
         "ext-openssl": "*",
         "ext-libxml": "*",
         "ext-simplexml": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-mcrypt": "*"
     },
     "autoload":{
        "psr-4":{
