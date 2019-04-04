@@ -257,6 +257,7 @@ class AopClient
         }
 
         if ($postMultipart) {
+            $headers = array('content-type: multipart/form-data');
             if (!version_compare(PHP_VERSION, '7.0.0', '>=')) {
                 $headers = array('content-type: multipart/form-data;charset=' . $this->postCharset . ';boundary=' . $this->getMillisecond());
             }
@@ -312,11 +313,11 @@ class AopClient
         );
 
         if ($this->framework === 'ThinkPHP') {
-            Think\Log::record(var_export($logData, true), 'AliPay', true);
+            \Think\Log::record(var_export($logData, true), 'AliPay', true);
         }
 
         if ($this->framework === 'Laravel') {
-            Illuminate\Support\Facades\Log::error(var_export($logData, true));
+            \Illuminate\Support\Facades\Log::error(var_export($logData, true));
         }
     }
 
