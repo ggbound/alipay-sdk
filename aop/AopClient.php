@@ -314,6 +314,10 @@ class AopClient
         if ($this->framework === 'ThinkPHP') {
             Think\Log::record(var_export($logData, true), 'AliPay', true);
         }
+
+        if ($this->framework === 'Laravel') {
+            Illuminate\Support\Facades\Log::error(var_export($logData, true));
+        }
     }
 
     /**
